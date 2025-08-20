@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Owen Chen | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --background-dark: #050214;
+      --background-light: #110738;
+      --accent-cyan: #00ffff;
+      --accent-magenta: #ff00ff;
+      --text-main: #e0e0e0;
+      --text-secondary: #a0a0a0;
+    }
+
+    body {
+      background-color: var(--background-dark);
+      color: var(--text-main);
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Audiowide', cursive;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes background-pan {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .animated-gradient {
+      background: linear-gradient(90deg, #050214, #1a0a3a, #050214);
+      background-size: 200% 200%;
+      animation: background-pan 20s ease infinite;
+    }
+    
+    .scanlines {
+      position: relative;
+    }
+    .scanlines::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        rgba(18, 16, 16, 0) 50%,
+        rgba(0, 0, 0, 0.25) 50%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.06),
+        rgba(0, 255, 0, 0.02),
+        rgba(0, 0, 255, 0.06)
+      );
+      background-size: 100% 2px, 3px 100%;
+      z-index: 2;
+      pointer-events: none;
+      animation: flicker 0.15s infinite;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0.1; }
+      20% { opacity: 1; }
+      80% { opacity: 0.7; }
+      100% { opacity: 1; }
+    }
+
+    .neon-text {
+      text-shadow: 
+        0 0 5px var(--accent-cyan),
+        0 0 10px var(--accent-cyan),
+        0 0 20px var(--accent-cyan),
+        0 0 40px var(--accent-magenta),
+        0 0 80px var(--accent-magenta);
+    }
+
+    .neon-border {
+      border: 1px solid var(--accent-cyan);
+      box-shadow: 0 0 5px var(--accent-cyan), inset 0 0 5px var(--accent-cyan);
+    }
+    
+    .glitch {
+      position: relative;
+      animation: glitch-skew 1s infinite linear alternate-reverse;
+    }
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--background-dark);
+    }
+    .glitch::before {
+      left: 2px;
+      text-shadow: -2px 0 var(--accent-magenta);
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch-anim 5s infinite linear alternate-reverse;
+    }
+    .glitch::after {
+      left: -2px;
+      text-shadow: -2px 0 var(--accent-cyan), 2px 2px var(--accent-magenta);
+      clip: rect(85px, 450px, 90px, 0);
+      animation: glitch-anim2 3s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch-anim {
+      0% { clip: rect(42px, 9999px, 44px, 0); transform: skew(0.3deg); }
+      /* ... other steps ... */
+      100% { clip: rect(67px, 9999px, 72px, 0); transform: skew(0.8deg); }
+    }
+    @keyframes glitch-anim2 {
+      0% { clip: rect(89px, 9999px, 91px, 0); transform: skew(0.5deg); }
+       /* ... other steps ... */
+      100% { clip: rect(18px, 9999px, 23px, 0); transform: skew(0.1deg); }
+    }
+    @keyframes glitch-skew {
+      0% { transform: skew(1deg); }
+      100% { transform: skew(-1deg); }
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1"
+  }
+}
+</script>
+</head>
+<body class="antialiased">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
