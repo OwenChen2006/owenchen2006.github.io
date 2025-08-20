@@ -2,7 +2,6 @@
 import React from 'react';
 import type { ProjectItem } from '../types';
 import AnimatedSection from './AnimatedSection';
-import { GithubIcon } from './Icons';
 
 const projectData: ProjectItem[] = [
   {
@@ -13,7 +12,16 @@ const projectData: ProjectItem[] = [
       'AI-driven full-stack web app leveraging NLP models and a custom Python/Flask backend.',
       'Generates personalized meal plans from Duke restaurants with real-time interactive nutrition insights.',
     ],
-    githubLink: 'https://github.com/OwenChen2006'
+    githubLink: 'https://github.com/OwenChen2006',
+    siteLink: 'https://dukebdeats.colab.duke.edu'
+  },
+  {
+    title: 'Vertex Detector in Coded Apertures',
+    tech: ['Python', 'YOLO', 'OpenCV', 'Computer Vision'],
+    date: '2025',
+    description: [
+      'Engineered a Computer Vision Model that utilizes the YOLO model to detect center vertices of coded apertures or similar figures with high noise with ~100% accuracy.'
+    ]
   },
   {
     title: 'Custom MIPS-based Processor Core',
@@ -62,11 +70,13 @@ const ProjectCard: React.FC<{ item: ProjectItem }> = ({ item }) => (
     <div className="flex-grow">
       <div className="flex justify-between items-start mb-4">
         <h3 className="text-xl font-bold text-sky-400">{item.title}</h3>
-        {item.githubLink && (
-          <a href={item.githubLink} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-sky-400">
-            <GithubIcon className="w-6 h-6" />
-          </a>
-        )}
+        <div className="flex items-center gap-3">
+          {item.siteLink && (
+            <a href={item.siteLink} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-sky-400 text-sm font-medium">
+              Live
+            </a>
+          )}
+        </div>
       </div>
       <p className="text-sm text-slate-500 mb-4">{item.date}</p>
       <ul className="list-disc list-inside text-slate-400 space-y-2 mb-4">

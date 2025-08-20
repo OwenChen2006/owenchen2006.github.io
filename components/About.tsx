@@ -2,6 +2,8 @@
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
 
+const headshotUrl = new URL('../src/assets/headshot.jpeg', import.meta.url).href;
+
 const About: React.FC = () => {
   return (
     <AnimatedSection id="about">
@@ -11,7 +13,7 @@ const About: React.FC = () => {
         </h2>
         <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 items-center">
             <div className="md:col-span-1 flex justify-center">
-                <img src="https://picsum.photos/seed/owenchen/400/400" alt="Owen Chen" className="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-sky-500 shadow-lg"/>
+                <img src={headshotUrl} alt="Owen Chen" className="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-sky-500 shadow-lg"/>
             </div>
             <div className="md:col-span-2 text-lg text-slate-400 space-y-4">
                 <p>

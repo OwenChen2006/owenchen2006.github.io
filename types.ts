@@ -13,6 +13,9 @@ export interface ProjectItem {
   date: string;
   description: string[];
   githubLink?: string;
+  imageUrl?: string;
+  docUrl?: string;
+  siteLink?: string;
 }
 
 export interface SkillCategory {
