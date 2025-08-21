@@ -14,6 +14,7 @@ const experienceData: ExperienceItem[] = [
       'Developed AI algorithms to triple breast cancer detection rates through XRD imaging.',
       'Engineered a spatially-aware cancer classifier trained on 3M+ data points, achieving 0.99 ROC AUC.',
       'Utilized a Pytorch model to narrow 3K+ VCs/investors to 38 fitting company specifications.',
+      'Built a 2-stageYOLO-v8 model to detect coded aperture patterns with ~100% accuracy and classify based on learned patterns (~99% accuracy)'
     ],
   },
   {
@@ -41,10 +42,10 @@ const experienceData: ExperienceItem[] = [
 const ExperienceCard: React.FC<{ item: ExperienceItem }> = ({ item }) => (
   <div className="mb-8 flex justify-between items-center w-full">
     <div className="order-1 w-5/12"></div>
-    <div className="z-20 flex items-center order-1 bg-sky-500 shadow-xl w-12 h-12 rounded-full">
+    <div className="z-20 flex items-center order-1 bg-cyan-500/90 shadow-xl w-12 h-12 rounded-full shadow-cyan-500/40">
       <h1 className="mx-auto text-white font-semibold text-lg"><BriefcaseIcon className="w-6 h-6" /></h1>
     </div>
-    <div className="order-1 bg-slate-800 rounded-lg shadow-xl w-5/12 px-6 py-4 border border-slate-700">
+    <div className="order-1 bg-slate-800/80 backdrop-blur-sm rounded-lg shadow-xl w-5/12 px-6 py-4 border neon-border">
       <h3 className="mb-2 font-bold text-sky-400 text-xl">{item.role}</h3>
       <p className="text-sm font-medium leading-snug tracking-wide text-slate-300">{item.company} | {item.location}</p>
       <p className="text-sm text-slate-500">{item.date}</p>
@@ -63,7 +64,7 @@ const Experience: React.FC = () => {
           Experience
         </h2>
         <div className="relative wrap overflow-hidden h-full">
-          <div className="border-2-2 absolute border-opacity-20 border-sky-700 h-full border" style={{ left: '50%' }}></div>
+          <div className="border-2-2 absolute border-opacity-30 border-cyan-600 h-full border shadow-[0_0_12px_rgba(34,211,238,0.4)]" style={{ left: '50%' }}></div>
           {experienceData.map((item, index) => (
              <div key={index} className={`mb-8 flex justify-between ${index % 2 === 0 ? 'flex-row-reverse' : ''} items-center w-full`}>
                 <div className="order-1 w-5/12"></div>
