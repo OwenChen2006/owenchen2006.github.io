@@ -14,7 +14,7 @@ const experienceData: ExperienceItem[] = [
       'Developed AI algorithms to triple breast cancer detection rates through XRD imaging.',
       'Engineered a spatially-aware cancer classifier trained on 3M+ data points, achieving 0.99 ROC AUC.',
       'Utilized a Pytorch model to narrow 3K+ VCs/investors to 38 fitting company specifications.',
-      'Built a 2-stageYOLO-v8 model to detect coded aperture patterns with ~100% accuracy and classify based on learned patterns (~99% accuracy)'
+      'Built a 2-stageYOLO-v8 model to detect coded aperture patterns with ~100% accuracy and classify based on learned patterns (~99% accuracy).'
     ],
   },
   {
