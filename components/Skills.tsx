@@ -10,11 +10,19 @@ const skillsData: SkillCategory[] = [
   },
   {
     name: 'Developer Tools & Frameworks',
-    skills: ['Pytorch', 'Tensorflow', 'React', 'Git', 'Google Cloud Platform', 'Arduino', 'NumPy', 'Pandas', 'Scipy', 'Flask'],
+    skills: ['PyTorch', 'TensorFlow', 'React', 'Flask', 'Qiskit', 'Arduino', 'Git', 'Google Cloud', 'Colab'],
   },
   {
-    name: 'Databases & Other',
-    skills: ['SQLite', 'CUDA', 'AutoCAD', 'Logisim Evolution', 'Excel', 'Google Colab'],
+    name: 'Libraries & Data Science',
+    skills: ['NumPy', 'Pandas', 'SciPy', 'Matplotlib', 'scikit-learn', 'Keras', 'OpenCV'],
+  },
+  {
+    name: 'Databases & Systems',
+    skills: ['SQLite', 'CUDA', 'Linux', 'Azure ML'],
+  },
+  {
+    name: 'Hardware & EDA',
+    skills: ['Logisim Evolution', 'AutoCAD'],
   },
 ];
 
