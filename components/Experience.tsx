@@ -2,20 +2,31 @@
 import React from 'react';
 import type { ExperienceItem } from '../types';
 import AnimatedSection from './AnimatedSection';
-import { BriefcaseIcon } from './Icons';
+import { BriefcaseIcon, HelpCircleIcon } from './Icons';
 
 const experienceData: ExperienceItem[] = [
   {
-    role: 'Machine Learning Engineering Intern',
+    role: 'Software Developer Intern',
     company: 'Calidar Medical',
     date: 'June 2025 - September 2025',
     location: 'Durham, NC',
     description: [
-      'Developed AI algorithms to triple breast cancer detection rates through XRD imaging.',
-      'Engineered a spatially-aware cancer classifier trained on 3M+ data points, achieving 0.99 ROC AUC.',
-      'Utilized a Pytorch model to narrow 3K+ VCs/investors to 38 fitting company specifications.',
-      'Built a 2-stage YOLO-v8 model to detect coded aperture patterns with ~100% accuracy and classify based on learned patterns (~99% accuracy).'
+      'Developed CNN-based diagnostic algorithms that helped triple breast cancer detection rates through XRD imaging—because every earlier diagnosis matters.',
+      'Engineered a spatially aware classifier trained on 3M+ datapoints, reaching 0.99 ROC AUC and surpassing medical benchmarks.',
+      'Trained a 2-stage YOLO‑v8 CV model to classify coded aperture vertices with 1.00 recall; narrowed 3000+ to 38 potential investors using a transformer‑based NLP engine.',
     ],
+    iconName: 'briefcase',
+  },
+  {
+    role: 'Technical Consultant',
+    company: 'Fortune 100 motor company (question-mark logo) via 180 Degrees Consulting',
+    date: 'August 2025 - Present',
+    location: 'Remote',
+    description: [
+      'Prototyped multi-agent AI workflows for global supply chain risk analysis—designing prompt orchestration and safe agent behaviors to turn noisy data into confident actions.',
+      'Shipped as a versioned REST API with CI-backed quality checks; reduced time from ad‑hoc notebooks to reproducible analysis in minutes using LangChain, FAISS, and FastAPI.',
+    ],
+    iconName: 'help',
   },
   {
     role: 'Undergraduate Researcher',
@@ -23,9 +34,10 @@ const experienceData: ExperienceItem[] = [
     date: 'January 2025 - Present',
     location: 'Durham, NC',
     description: [
-      'Leading ML sub-team applying ML/LLMs for material optimization in atomic layering.',
-      'Built an automated Python pipeline for signal processing, feature engineering, and REST API-based model evaluation.',
+      'Lead ML sub-team building an automated pipeline for spectroscopy: denoising, feature engineering, and model evaluation delivered through a clean REST interface.',
+      'Cut path from experimental data to decisions from hours to minutes—unlocking faster material discovery in atomic-layer deposition.',
     ],
+    iconName: 'briefcase',
   },
   {
     role: 'Semiconductor Fab Intern',
@@ -43,7 +55,13 @@ const ExperienceCard: React.FC<{ item: ExperienceItem }> = ({ item }) => (
   <div className="mb-8 flex justify-between items-center w-full">
     <div className="order-1 w-5/12"></div>
     <div className="z-20 flex items-center order-1 bg-cyan-500/90 shadow-xl w-12 h-12 rounded-full shadow-cyan-500/40">
-      <h1 className="mx-auto text-white font-semibold text-lg"><BriefcaseIcon className="w-6 h-6" /></h1>
+      <h1 className="mx-auto text-white font-semibold text-lg">
+        {item.iconName === 'help' ? (
+          <HelpCircleIcon className="w-6 h-6" />
+        ) : (
+          <BriefcaseIcon className="w-6 h-6" />
+        )}
+      </h1>
     </div>
     <div className="order-1 bg-slate-800/80 backdrop-blur-sm rounded-lg shadow-xl w-5/12 px-6 py-4 border neon-border">
       <h3 className="mb-2 font-bold text-sky-400 text-xl">{item.role}</h3>

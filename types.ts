@@ -5,6 +5,7 @@ export interface ExperienceItem {
   date: string;
   location: string;
   description: string[];
+  iconName?: 'briefcase' | 'help';
 }
 
 export interface ProjectItem {
@@ -16,6 +17,7 @@ export interface ProjectItem {
   imageUrl?: string;
   docUrl?: string;
   siteLink?: string;
+  iconName?: 'basketball' | 'help';
 }
 
 export interface SkillCategory {

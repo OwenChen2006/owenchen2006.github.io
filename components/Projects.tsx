@@ -1,6 +1,7 @@
 
 import React from 'react';
 import type { ProjectItem } from '../types';
+import { BasketballIcon } from './Icons';
 import AnimatedSection from './AnimatedSection';
 
 const projectData: ProjectItem[] = [
@@ -13,6 +14,17 @@ const projectData: ProjectItem[] = [
     ],
     githubLink: 'https://github.com/OwenChen2006',
     siteLink: 'https://dukebdeats.colab.duke.edu'
+  },
+  {
+    title: 'NBABot',
+    tech: ['Python', 'FastAPI', 'PostgreSQL', 'Docker', 'LangChain'],
+    date: 'August 2025 - Present',
+    description: [
+      'Built a production-grade NBA stats chatbot with a clean REST interface, fine-tuned prompts, and a resilient ingestion pipeline that turns raw game data into answers real fans trust.',
+      'Shipped with containerized services, durable background jobs, and a tuned embeddings store—because fast, reliable basketball insights should feel effortless.',
+    ],
+    githubLink: 'https://github.com/OwenChen2006',
+    iconName: 'basketball'
   },
   {
     title: 'Vertex Detector in Coded Apertures',
@@ -68,7 +80,10 @@ const ProjectCard: React.FC<{ item: ProjectItem }> = ({ item }) => (
     <div className="pointer-events-none absolute -inset-20 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.18),transparent_50%)]"></div>
     <div className="flex-grow">
       <div className="flex justify-between items-start mb-4">
-        <h3 className="text-xl font-bold text-sky-400">{item.title}</h3>
+        <div className="flex items-center gap-2">
+          {item.iconName === 'basketball' && <BasketballIcon className="w-5 h-5 text-cyan-300" />}
+          <h3 className="text-xl font-bold text-sky-400">{item.title}</h3>
+        </div>
         <div className="flex items-center gap-3">
           {item.siteLink && (
             <a href={item.siteLink} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-sky-400 text-sm font-medium">
