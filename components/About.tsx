@@ -15,15 +15,21 @@ const About: React.FC = () => {
             <div className="md:col-span-1 flex justify-center">
                 <img src={headshotUrl} alt="Owen Chen" className="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-sky-500 shadow-lg"/>
             </div>
-            <div className="md:col-span-2 text-lg text-slate-400 space-y-4">
+            <div className="md:col-span-2 text-lg text-slate-300 space-y-4">
                 <p>
-                    I thrive on turning ambitious ideas into systems people can trust. As a dual major in Electrical & Computer Engineering and Computer Science at Duke University, I'm passionate about the intersection of hardware, software, and problem-solving.
+                    I’m Owen Chen, an ECE/CS builder who lives where ML and software meets systems.
                 </p>
                 <p>
-                    From designing AI-powered nutrition platforms to engineering MIPS-based processors from the ground up, I approach every challenge with curiosity, precision, and a drive to deliver scalable solutions. My experience spans from academic research in material science to developing cancer detection platforms that exceed medical benchmarks.
+                    I turn messy signals into tools people trust— from a 16-bit MIPS CPU and reproducible ML pipelines in Duke’s Wang Lab to full-stack, agentic apps like BlueDevilEats and an NBA RAG chatbot.
                 </p>
                 <p>
-                    I bring not just strong technical skills, but the initiative to take ideas from whiteboard sketches to production-ready code. I'm excited to contribute that same problem-solving energy to build software that's not only functional but transformative.
+                    My default mode is end-to-end: clean data contracts, observable backends, tight latency, simple UIs—so ideas survive first contact with real users.
+                </p>
+                <p>
+                    I do this because shipping reliable software is my favorite kind of respect: it makes hard things feel easy and lets people focus on what matters, not the machinery underneath.
+                </p>
+                <p>
+                    In short: I build glue and engines—so teams move faster, products feel dependable, and intelligence becomes usable every day.
                 </p>
             </div>
         </div>
