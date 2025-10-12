@@ -6,7 +6,7 @@ import { BriefcaseIcon, HelpCircleIcon } from './Icons';
 
 const experienceData: ExperienceItem[] = [
   {
-    role: 'Software Developer Intern',
+    role: 'AI Software Developer Intern',
     company: 'Calidar Medical',
     date: 'June 2025 - September 2025',
     location: 'Durham, NC',
@@ -19,7 +19,7 @@ const experienceData: ExperienceItem[] = [
   },
   {
     role: 'Technical Consultant',
-    company: 'Fortune 100 motor company (question-mark logo) via 180 Degrees Consulting',
+    company: 'Fortune 100 motor company via 180 Degrees Consulting',
     date: 'August 2025 - Present',
     location: 'Remote',
     description: [
@@ -43,7 +43,7 @@ const experienceData: ExperienceItem[] = [
     role: 'Semiconductor Fab Intern',
     company: 'Energen Semiconductor',
     date: 'June 2023 - September 2023',
-    location: 'Jinan',
+    location: '',
     description: [
       'Executed semiconductor fabrication workflows, using SEM to identify nanoscale defects and optimize chip yields.',
       'Streamlined wafer inventories by analyzing fab data, eliminating non-qualifying batches and boosting throughput.',
