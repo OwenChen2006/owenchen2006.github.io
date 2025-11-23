@@ -5,6 +5,18 @@ import AnimatedSection from './AnimatedSection';
 import { BriefcaseIcon, HelpCircleIcon } from './Icons';
 
 const experienceData: ExperienceItem[] = [
+
+  {
+    role: 'Head of ML Systems and Backend',
+    company: 'Echolon',
+    date: 'November 2025 - Present',
+    location: 'Durham, NC',
+    description: [
+      'Leading forecasting ML, LLM inference, and backend engineering for Echolon, an AI-powered business intelligence platform built for small and mid-size companies that want clarity, speed, and smarter decision-making.',
+    ],
+    iconName: 'briefcase',
+  },
+
   {
     role: 'AI Software Developer Intern',
     company: 'Calidar Medical',
@@ -19,14 +31,15 @@ const experienceData: ExperienceItem[] = [
   },
   {
     role: 'Technical Consultant',
-    company: 'Fortune 100 motor company via 180 Degrees Consulting',
+    company: 'Fortune 100 motor company',
     date: 'August 2025 - Present',
     location: 'Remote',
     description: [
-      'Prototyped multi-agent AI workflows for global supply chain risk analysis—designing prompt orchestration and safe agent behaviors to turn noisy data into confident actions.',
-      'Shipped as a versioned REST API with CI-backed quality checks; reduced time from ad‑hoc notebooks to reproducible analysis in minutes using LangChain, FAISS, and FastAPI.',
+      'Engineered intelligent routing system for multi-agent AI platform processing 25+ natural language query types across distributed microservices, achieving 100% validation accuracy on 40,000+ supply chain records with sub-10s latency using Gemini API, semantic intent classification, and FastAPI-based orchestration layer.',
+
+      'Implemented production-grade optimization pipeline combining greedy algorithms (100ms) and constraint programming solvers (2s) for real-time resource allocation, with comprehensive testing framework tracking 5 core metrics and automated tool-calling workflows managing 10+ specialized operations at 90%+ accuracy.',
     ],
-    iconName: 'help',
+      iconName: 'help',
   },
   {
     role: 'Undergraduate Researcher',

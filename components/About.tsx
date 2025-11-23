@@ -17,19 +17,13 @@ const About: React.FC = () => {
             </div>
             <div className="md:col-span-2 text-lg text-slate-300 space-y-4">
                 <p>
-                    I’m Owen Chen, an ECE/CS builder who lives where ML and software meets systems.
+                    I’m Owen Chen — an ECE/CS builder who got hooked on tech after spending way too many nights modding video games and realizing I could change how the world worked, even if it was just on screen. That curiosity turned into a love for building systems that actually do things — the kind that make hard problems feel easy for everyone else.
                 </p>
                 <p>
-                    I turn messy signals into tools people trust— from a 16-bit MIPS CPU and reproducible ML pipelines in Duke’s Wang Lab to full-stack, agentic apps like BlueDevilEats and an NBA RAG chatbot.
+                    Since then, I’ve built everything from a 16-bit MIPS CPU and reproducible ML pipelines in Duke’s Wang Lab to full-stack, agentic tools like BlueDevilEats and an NBA RAG chatbot. I like being in the middle of it all — wiring together the data, the models, and the interfaces until something that once looked messy suddenly feels smooth and alive.
                 </p>
                 <p>
-                    My default mode is end-to-end: clean data contracts, observable backends, tight latency, simple UIs—so ideas survive first contact with real users.
-                </p>
-                <p>
-                    I do this because shipping reliable software is my favorite kind of respect: it makes hard things feel easy and lets people focus on what matters, not the machinery underneath.
-                </p>
-                <p>
-                    In short: I build glue and engines—so teams move faster, products feel dependable, and intelligence becomes usable every day.
+                    For me, reliable software is a quiet kind of art — it earns trust without asking for attention. I build that kind of work: the glue and the engines that help teams move faster, make products feel dependable, and turn intelligence into something people can use every day.
                 </p>
             </div>
         </div>
