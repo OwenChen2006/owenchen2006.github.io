@@ -6,6 +6,26 @@ import AnimatedSection from './AnimatedSection';
 
 const projectData: ProjectItem[] = [
   {
+    title: 'Echolon',
+    tech: ['Python', 'Machine Learning', 'LLM', 'Backend Engineering', 'AI', 'Business Intelligence'],
+    date: 'November 2025 - Present',
+    description: [
+      'Leading forecasting ML, LLM inference, and backend engineering for Echolon, an AI-powered business intelligence platform built for small and mid-size companies that want clarity, speed, and smarter decision-making.',
+    ],
+    imageUrl: new URL('../src/assets/echolon.png', import.meta.url).href
+  },
+  {
+    title: 'Grok Intelligent Search',
+    tech: ['Python', 'FastAPI', 'React', 'TypeScript', 'SQLite', 'ChromaDB', 'Docker', 'Grok API'],
+    date: '2025',
+    description: [
+      'Built an AI-driven search engine for X (Twitter) posts powered by the Grok API, featuring intelligent query understanding, ambiguous query clarification, and contextual summarization.',
+      'Implemented hybrid search combining SQLite FTS5 (token-based) and ChromaDB (semantic embeddings) for optimal recall and precision, with a clean React/TypeScript frontend and FastAPI backend deployed via Docker.',
+    ],
+    githubLink: 'https://github.com/OwenChen2006',
+    imageUrl: new URL('../src/assets/grok-search.png', import.meta.url).href
+  },
+  {
     title: 'Blue Devil Eats',
     tech: ['Python', 'Javascript', 'React', 'Flask', 'REST API', 'NLP'],
     date: 'January 2025 - Present',
@@ -79,6 +99,11 @@ const ProjectCard: React.FC<{ item: ProjectItem }> = ({ item }) => (
     <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-60"></div>
     <div className="pointer-events-none absolute -inset-20 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.18),transparent_50%)]"></div>
     <div className="flex-grow">
+      {item.imageUrl && (
+        <div className="mb-4 rounded-lg overflow-hidden border border-slate-700">
+          <img src={item.imageUrl} alt={item.title} className="w-full h-48 object-cover" />
+        </div>
+      )}
       <div className="flex justify-between items-start mb-4">
         <div className="flex items-center gap-2">
           {item.iconName === 'basketball' && <BasketballIcon className="w-5 h-5 text-cyan-300" />}

@@ -10,7 +10,7 @@ const experienceData: ExperienceItem[] = [
     role: 'Head of ML Systems and Backend',
     company: 'Echolon',
     date: 'November 2025 - Present',
-    location: 'Durham, NC',
+    location: 'Portland, OR',
     description: [
       'Leading forecasting ML, LLM inference, and backend engineering for Echolon, an AI-powered business intelligence platform built for small and mid-size companies that want clarity, speed, and smarter decision-making.',
     ],
@@ -32,7 +32,7 @@ const experienceData: ExperienceItem[] = [
   {
     role: 'Technical Consultant',
     company: 'Fortune 100 motor company',
-    date: 'August 2025 - Present',
+    date: 'September 2025 - Present',
     location: 'Remote',
     description: [
       'Engineered intelligent routing system for multi-agent AI platform processing 25+ natural language query types across distributed microservices, achieving 100% validation accuracy on 40,000+ supply chain records with sub-10s latency using Gemini API, semantic intent classification, and FastAPI-based orchestration layer.',
