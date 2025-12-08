@@ -121,10 +121,26 @@ const ProjectCard: React.FC<{ item: ProjectItem }> = ({ item }) => {
               <source src={item.videoUrl} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+            {item.videoUrl.endsWith('.mov') && (
+              <p className="text-xs text-slate-500 mt-2 text-center">
+                Note: .mov files may not play in all browsers. Consider converting to MP4 for better compatibility.
+              </p>
+            )}
           </div>
         ) : item.imageUrl && (
-          <div className="mb-4 rounded-lg overflow-hidden border border-slate-700">
+          <div className="mb-4 rounded-lg overflow-hidden border border-slate-700 relative group">
             <img src={item.imageUrl} alt={item.title} className="w-full h-48 object-cover" />
+            {item.videoUrl && (
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <p className="text-white text-sm text-center px-4">
+                  Video format (.mov) not supported in this browser. 
+                  <br />
+                  <a href={item.videoUrl} download className="text-cyan-400 hover:underline mt-2 inline-block">
+                    Download video
+                  </a>
+                </p>
+              </div>
+            )}
           </div>
         )}
         <div className="flex justify-between items-start mb-4">
