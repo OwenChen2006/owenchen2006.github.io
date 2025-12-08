@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import type { ProjectItem } from '../types';
 import { BasketballIcon } from './Icons';
 import AnimatedSection from './AnimatedSection';
@@ -95,51 +95,62 @@ const projectData: ProjectItem[] = [
   },
 ];
 
-const ProjectCard: React.FC<{ item: ProjectItem }> = ({ item }) => (
-  <div className="relative overflow-hidden bg-slate-800/70 backdrop-blur-md p-6 rounded-xl border neon-border h-full flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)]">
-    <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-60"></div>
-    <div className="pointer-events-none absolute -inset-20 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.18),transparent_50%)]"></div>
-    <div className="flex-grow">
-      {item.videoUrl ? (
-        <div className="mb-4 rounded-lg overflow-hidden border border-slate-700">
-          <video 
-            src={item.videoUrl} 
-            controls 
-            className="w-full h-48 object-cover"
-            preload="metadata"
-          >
-            Your browser does not support the video tag.
-          </video>
+const ProjectCard: React.FC<{ item: ProjectItem }> = ({ item }) => {
+  const [videoError, setVideoError] = useState(false);
+  const [showVideo, setShowVideo] = useState(!!item.videoUrl);
+
+  return (
+    <div className="relative overflow-hidden bg-slate-800/70 backdrop-blur-md p-6 rounded-xl border neon-border h-full flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)]">
+      <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-60"></div>
+      <div className="pointer-events-none absolute -inset-20 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.18),transparent_50%)]"></div>
+      <div className="flex-grow">
+        {showVideo && !videoError && item.videoUrl ? (
+          <div className="mb-4 rounded-lg overflow-hidden border border-slate-700">
+            <video 
+              src={item.videoUrl} 
+              controls 
+              className="w-full h-48 object-cover"
+              preload="metadata"
+              playsInline
+              onError={() => {
+                setVideoError(true);
+                setShowVideo(false);
+              }}
+            >
+              <source src={item.videoUrl} type="video/quicktime" />
+              <source src={item.videoUrl} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        ) : item.imageUrl && (
+          <div className="mb-4 rounded-lg overflow-hidden border border-slate-700">
+            <img src={item.imageUrl} alt={item.title} className="w-full h-48 object-cover" />
+          </div>
+        )}
+        <div className="flex justify-between items-start mb-4">
+          <div className="flex items-center gap-2">
+            {item.iconName === 'basketball' && <BasketballIcon className="w-5 h-5 text-cyan-300" />}
+            <h3 className="text-xl font-bold text-sky-400">{item.title}</h3>
+          </div>
+          <div className="flex items-center gap-3">
+            {item.siteLink && (
+              <a href={item.siteLink} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-sky-400 text-sm font-medium">
+                Live
+              </a>
+            )}
+            {item.githubLink && (
+              <a href={item.githubLink} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-sky-400 text-sm font-medium">
+                GitHub
+              </a>
+            )}
+          </div>
         </div>
-      ) : item.imageUrl && (
-        <div className="mb-4 rounded-lg overflow-hidden border border-slate-700">
-          <img src={item.imageUrl} alt={item.title} className="w-full h-48 object-cover" />
-        </div>
-      )}
-      <div className="flex justify-between items-start mb-4">
-        <div className="flex items-center gap-2">
-          {item.iconName === 'basketball' && <BasketballIcon className="w-5 h-5 text-cyan-300" />}
-          <h3 className="text-xl font-bold text-sky-400">{item.title}</h3>
-        </div>
-        <div className="flex items-center gap-3">
-          {item.siteLink && (
-            <a href={item.siteLink} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-sky-400 text-sm font-medium">
-              Live
-            </a>
-          )}
-          {item.githubLink && (
-            <a href={item.githubLink} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-sky-400 text-sm font-medium">
-              GitHub
-            </a>
-          )}
-        </div>
+        <p className="text-sm text-slate-500 mb-4">{item.date}</p>
+        <ul className="list-disc list-inside text-slate-400 space-y-2 mb-4">
+          {item.description.map((d, i) => <li key={i}>{d}</li>)}
+        </ul>
       </div>
-      <p className="text-sm text-slate-500 mb-4">{item.date}</p>
-      <ul className="list-disc list-inside text-slate-400 space-y-2 mb-4">
-        {item.description.map((d, i) => <li key={i}>{d}</li>)}
-      </ul>
-    </div>
-    <div className="flex flex-wrap gap-2 mt-auto">
+      <div className="flex flex-wrap gap-2 mt-auto">
       {item.tech.map((t, i) => (
         <span key={i} className="bg-slate-700 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">
           {t}
