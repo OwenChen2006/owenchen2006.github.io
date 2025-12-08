@@ -172,9 +172,10 @@ const ProjectCard: React.FC<{ item: ProjectItem }> = ({ item }) => {
           {t}
         </span>
       ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Projects: React.FC = () => {
   return (
