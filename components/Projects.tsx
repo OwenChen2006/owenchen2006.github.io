@@ -167,11 +167,11 @@ const ProjectCard: React.FC<{ item: ProjectItem }> = ({ item }) => {
         </ul>
       </div>
       <div className="flex flex-wrap gap-2 mt-auto">
-      {item.tech.map((t, i) => (
-        <span key={i} className="bg-slate-700 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">
-          {t}
-        </span>
-      ))}
+        {item.tech.map((t, i) => (
+          <span key={i} className="bg-slate-700 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">
+            {t}
+          </span>
+        ))}
       </div>
     </div>
   );
