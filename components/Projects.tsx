@@ -23,7 +23,8 @@ const projectData: ProjectItem[] = [
       'Implemented hybrid search combining SQLite FTS5 (token-based) and ChromaDB (semantic embeddings) for optimal recall and precision, with a clean React/TypeScript frontend and FastAPI backend deployed via Docker.',
     ],
     githubLink: 'https://github.com/OwenChen2006',
-    imageUrl: new URL('../src/assets/grok-search.png', import.meta.url).href
+    imageUrl: new URL('../src/assets/grok-search.png', import.meta.url).href,
+    videoUrl: new URL('../src/assets/grok-search-demo.mov', import.meta.url).href
   },
   {
     title: 'Blue Devil Eats',
@@ -99,7 +100,18 @@ const ProjectCard: React.FC<{ item: ProjectItem }> = ({ item }) => (
     <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-60"></div>
     <div className="pointer-events-none absolute -inset-20 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.18),transparent_50%)]"></div>
     <div className="flex-grow">
-      {item.imageUrl && (
+      {item.videoUrl ? (
+        <div className="mb-4 rounded-lg overflow-hidden border border-slate-700">
+          <video 
+            src={item.videoUrl} 
+            controls 
+            className="w-full h-48 object-cover"
+            preload="metadata"
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      ) : item.imageUrl && (
         <div className="mb-4 rounded-lg overflow-hidden border border-slate-700">
           <img src={item.imageUrl} alt={item.title} className="w-full h-48 object-cover" />
         </div>

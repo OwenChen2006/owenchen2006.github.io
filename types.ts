@@ -15,6 +15,7 @@ export interface ProjectItem {
   description: string[];
   githubLink?: string;
   imageUrl?: string;
+  videoUrl?: string;
   docUrl?: string;
   siteLink?: string;
   iconName?: 'basketball' | 'help';
