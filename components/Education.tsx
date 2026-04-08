@@ -16,7 +16,7 @@ const Education: React.FC = () => {
           </div>
           <div className="mt-4 text-slate-300">
             <p>Double Major in Electrical and Computer Engineering and Computer Science — <span className="font-semibold">GPA: 3.7/4.0</span></p>
-            <p className="mt-3"><span className="font-semibold">Relevant coursework:</span> Data Structures and Algorithms, Computer Architecture, Linear Algebra, Fundamentals of ECE, Signals and Systems, Multivariable Calculus, Probability</p>
+            <p className="mt-3"><span className="font-semibold">Relevant coursework:</span> Data Structures and Algorithms, Computer Architecture, Linear Algebra, Fundamentals of ECE, Signals and Systems, Multivariable Calculus, Probability, Intro to Applied ML, Digital Systems, Differential Equations, Intro to Microlelectric Devices and Circuits</p>
           </div>
         </div>
       </div>
