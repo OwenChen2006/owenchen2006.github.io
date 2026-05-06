@@ -17,6 +17,8 @@ export interface ProjectItem {
   /** Anchor text for `githubLink` (default "GitHub"; use e.g. "GitLab" for non-GitHub hosts). */
   sourceCodeLabel?: string;
   imageUrl?: string;
+  /** Demo / walkthrough video (shown above description when set). */
+  videoUrl?: string;
   docUrl?: string;
   siteLink?: string;
   iconName?: 'basketball' | 'help';

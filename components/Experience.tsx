@@ -5,7 +5,14 @@ import AnimatedSection from './AnimatedSection';
 import { BriefcaseIcon, HelpCircleIcon } from './Icons';
 
 const experienceData: ExperienceItem[] = [
-
+  {
+    role: 'Software Engineering Intern',
+    company: 'Microsoft AI',
+    date: 'June 2026 - September 2026',
+    location: 'Redmond, WA',
+    description: ['CoreAI in business and commerce'],
+    iconName: 'briefcase',
+  },
   {
     role: 'Head of ML Systems and Backend',
     company: 'Echolon',

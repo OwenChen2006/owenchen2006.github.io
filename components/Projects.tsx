@@ -1,10 +1,31 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import type { ProjectItem } from '../types';
 import { BasketballIcon } from './Icons';
 import AnimatedSection from './AnimatedSection';
 
 const projectData: ProjectItem[] = [
+  {
+    title: 'Echolon',
+    tech: ['Python', 'Machine Learning', 'LLM', 'Backend Engineering', 'AI', 'Business Intelligence'],
+    date: 'November 2025 - Present',
+    description: [
+      'Leading forecasting ML, LLM inference, and backend engineering for Echolon, an AI-powered business intelligence platform built for small and mid-size companies that want clarity, speed, and smarter decision-making.',
+    ],
+    imageUrl: new URL('../src/assets/echolon.png', import.meta.url).href
+  },
+  {
+    title: 'Grok Intelligent Search',
+    tech: ['Python', 'FastAPI', 'React', 'TypeScript', 'SQLite', 'ChromaDB', 'Docker', 'Grok API'],
+    date: '2025',
+    description: [
+      'Built an AI-driven search engine for X (Twitter) posts powered by the Grok API, featuring intelligent query understanding, ambiguous query clarification, and contextual summarization.',
+      'Implemented hybrid search combining SQLite FTS5 (token-based) and ChromaDB (semantic embeddings) for optimal recall and precision, with a clean React/TypeScript frontend and FastAPI backend deployed via Docker.',
+    ],
+    githubLink: 'https://github.com/OwenChen2006',
+    imageUrl: new URL('../src/assets/grok-search.png', import.meta.url).href,
+    videoUrl: new URL('../src/assets/grok-search-demo.mp4', import.meta.url).href
+  },
   {
     title: 'Blue Devil Eats',
     tech: ['Python', 'Javascript', 'React', 'Flask', 'REST API', 'NLP'],
@@ -13,7 +34,8 @@ const projectData: ProjectItem[] = [
       'Create an AI-driven full-stack web application leveraging REST API and NLP models and a Python/Flask backend to generate personalized meal plans from Duke restaurants with real-time interactive nutrition insights.',
     ],
     githubLink: 'https://github.com/OwenChen2006',
-    siteLink: 'https://dukebdeats.colab.duke.edu'
+    siteLink: 'https://dukebdeats.colab.duke.edu',
+    imageUrl: new URL('../src/assets/blue-devil-eats.png', import.meta.url).href
   },
   {
     title: 'NBABot',
@@ -46,6 +68,7 @@ const projectData: ProjectItem[] = [
       'Offline ONNX inference and ~2,500 fps classification on CPU; trained on rule-based pseudo-labels with evaluation against hand-labeled gold clips.',
     ],
     githubLink: 'https://github.com/OwenChen2006/Smart-Bench-Press-Analyzer',
+    videoUrl: new URL('../src/assets/bench-press-demo.mp4', import.meta.url).href
   },
   {
     title: 'Vertex Detector in Coded Apertures',
@@ -95,43 +118,70 @@ const projectData: ProjectItem[] = [
   },
 ];
 
-const ProjectCard: React.FC<{ item: ProjectItem }> = ({ item }) => (
-  <div className="relative overflow-hidden bg-slate-800/70 backdrop-blur-md p-6 rounded-xl border neon-border h-full flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)]">
-    <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-60"></div>
-    <div className="pointer-events-none absolute -inset-20 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.18),transparent_50%)]"></div>
-    <div className="flex-grow">
-      <div className="flex justify-between items-start mb-4">
-        <div className="flex items-center gap-2">
-          {item.iconName === 'basketball' && <BasketballIcon className="w-5 h-5 text-cyan-300" />}
-          <h3 className="text-xl font-bold text-sky-400">{item.title}</h3>
+const ProjectCard: React.FC<{ item: ProjectItem }> = ({ item }) => {
+  const [videoError, setVideoError] = useState(false);
+  const [showVideo, setShowVideo] = useState(!!item.videoUrl);
+
+  return (
+    <div className="relative overflow-hidden bg-slate-800/70 backdrop-blur-md p-6 rounded-xl border neon-border h-full flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)]">
+      <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-60"></div>
+      <div className="pointer-events-none absolute -inset-20 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.18),transparent_50%)]"></div>
+      <div className="flex-grow">
+        {showVideo && !videoError && item.videoUrl ? (
+          <div className="mb-4 rounded-lg overflow-hidden border border-slate-700">
+            <video 
+              src={item.videoUrl} 
+              controls 
+              className="w-full h-48 object-cover"
+              preload="metadata"
+              playsInline
+              onError={() => {
+                setVideoError(true);
+                setShowVideo(false);
+              }}
+            >
+              <source src={item.videoUrl} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        ) : item.imageUrl && (
+          <div className="mb-4 rounded-lg overflow-hidden border border-slate-700">
+            <img src={item.imageUrl} alt={item.title} className="w-full h-48 object-cover" />
+          </div>
+        )}
+        <div className="flex justify-between items-start mb-4">
+          <div className="flex items-center gap-2">
+            {item.iconName === 'basketball' && <BasketballIcon className="w-5 h-5 text-cyan-300" />}
+            <h3 className="text-xl font-bold text-sky-400">{item.title}</h3>
+          </div>
+          <div className="flex items-center gap-3">
+            {item.siteLink && (
+              <a href={item.siteLink} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-sky-400 text-sm font-medium">
+                Live
+              </a>
+            )}
+            {item.githubLink && (
+              <a href={item.githubLink} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-sky-400 text-sm font-medium">
+                {item.sourceCodeLabel ?? 'GitHub'}
+              </a>
+            )}
+          </div>
         </div>
-        <div className="flex items-center gap-3">
-          {item.siteLink && (
-            <a href={item.siteLink} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-sky-400 text-sm font-medium">
-              Live
-            </a>
-          )}
-          {item.githubLink && (
-            <a href={item.githubLink} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-sky-400 text-sm font-medium">
-              {item.sourceCodeLabel ?? 'GitHub'}
-            </a>
-          )}
-        </div>
+        <p className="text-sm text-slate-500 mb-4">{item.date}</p>
+        <ul className="list-disc list-inside text-slate-400 space-y-2 mb-4">
+          {item.description.map((d, i) => <li key={i}>{d}</li>)}
+        </ul>
       </div>
-      <p className="text-sm text-slate-500 mb-4">{item.date}</p>
-      <ul className="list-disc list-inside text-slate-400 space-y-2 mb-4">
-        {item.description.map((d, i) => <li key={i}>{d}</li>)}
-      </ul>
+      <div className="flex flex-wrap gap-2 mt-auto">
+        {item.tech.map((t, i) => (
+          <span key={i} className="bg-slate-700 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">
+            {t}
+          </span>
+        ))}
+      </div>
     </div>
-    <div className="flex flex-wrap gap-2 mt-auto">
-      {item.tech.map((t, i) => (
-        <span key={i} className="bg-slate-700 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">
-          {t}
-        </span>
-      ))}
-    </div>
-  </div>
-);
+  );
+};
 
 const Projects: React.FC = () => {
   return (
