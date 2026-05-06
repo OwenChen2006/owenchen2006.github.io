@@ -14,8 +14,9 @@ export interface ProjectItem {
   date: string;
   description: string[];
   githubLink?: string;
+  /** Anchor text for `githubLink` (default "GitHub"; use e.g. "GitLab" for non-GitHub hosts). */
+  sourceCodeLabel?: string;
   imageUrl?: string;
-  videoUrl?: string;
   docUrl?: string;
   siteLink?: string;
   iconName?: 'basketball' | 'help';
