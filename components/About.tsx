@@ -23,7 +23,7 @@ const About: React.FC = () => {
                     Since then, I’ve built everything from a 16-bit MIPS CPU and reproducible ML pipelines in Duke’s Wang Lab to full-stack, agentic tools like BlueDevilEats and an NBA RAG chatbot. I like being in the middle of it all — wiring together the data, the models, and the interfaces until something that once looked messy suddenly feels smooth and alive.
                 </p>
                 <p>
-                    For me, reliable software is a quiet kind of art — it earns trust without asking for attention. I build that kind of work: the glue and the engines that help teams move faster, make products feel dependable, and turn intelligence into something people can use every day.
+                    For me, reliable software is a quiet kind of art — it earns trust without asking for attention. I build that kind of work; things that help teams move faster, make products feel dependable, and turn intelligence into something people can use every day.
                 </p>
             </div>
         </div>
