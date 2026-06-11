@@ -59,16 +59,6 @@ const experienceData: ExperienceItem[] = [
     ],
     iconName: 'briefcase',
   },
-  {
-    role: 'Semiconductor Fab Intern',
-    company: 'Energen Semiconductor',
-    date: 'June 2023 - September 2023',
-    location: '',
-    description: [
-      'Executed semiconductor fabrication workflows, using SEM to identify nanoscale defects and optimize chip yields.',
-      'Streamlined wafer inventories by analyzing fab data, eliminating non-qualifying batches and boosting throughput.',
-    ],
-  },
 ];
 
 const ExperienceCard: React.FC<{ item: ExperienceItem }> = ({ item }) => (
