@@ -6,6 +6,7 @@ export interface ExperienceItem {
   location: string;
   description: string[];
   iconName?: 'briefcase' | 'help';
+  logoUrl?: string;
 }
 
 export interface ProjectItem {

@@ -4,10 +4,14 @@ import type { ExperienceItem } from '../types';
 import AnimatedSection from './AnimatedSection';
 import { BriefcaseIcon, HelpCircleIcon } from './Icons';
 
+const microsoftLogo = new URL('../src/assets/microsoft.svg', import.meta.url).href;
+const teslaLogo = new URL('../src/assets/tesla.svg', import.meta.url).href;
+
 const experienceData: ExperienceItem[] = [
   {
     role: 'Applied AI/ML Software Engineering Intern',
     company: 'Microsoft AI (MAI)',
+    logoUrl: microsoftLogo,
     date: 'June 2026 - August 2026',
     location: 'Redmond, WA',
     description: [
@@ -30,6 +34,7 @@ const experienceData: ExperienceItem[] = [
   {
     role: 'Technical Consultant',
     company: 'Tesla',
+    logoUrl: teslaLogo,
     date: 'August 2025 - January 2026',
     location: 'Remote',
     description: [
@@ -98,12 +103,23 @@ const Experience: React.FC = () => {
           {experienceData.map((item, index) => (
              <div key={index} className={`mb-8 flex justify-between ${index % 2 === 0 ? 'flex-row-reverse' : ''} items-center w-full`}>
                 <div className="order-1 w-5/12"></div>
-                <div className="z-20 flex items-center order-1 bg-sky-500 shadow-xl w-12 h-12 rounded-full">
-                  <BriefcaseIcon className="mx-auto text-white w-6 h-6" />
+                <div className={`z-20 flex items-center justify-center order-1 shadow-xl w-12 h-12 rounded-full ${item.logoUrl ? 'bg-white' : 'bg-sky-500'}`}>
+                  {item.logoUrl ? (
+                    <img src={item.logoUrl} alt="" className="w-7 h-7 object-contain" />
+                  ) : (
+                    <BriefcaseIcon className="text-white w-6 h-6" />
+                  )}
                 </div>
                 <div className="order-1 bg-slate-800/80 backdrop-blur-sm rounded-lg shadow-xl w-5/12 px-6 py-4 border border-slate-700">
                   <h3 className="mb-2 font-bold text-sky-400 text-xl">{item.role}</h3>
-                  <p className="text-sm font-medium leading-snug tracking-wide text-slate-300">{item.company} | {item.location}</p>
+                  <p className="flex items-center gap-2 text-sm font-medium leading-snug tracking-wide text-slate-300">
+                    {item.logoUrl && (
+                      <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded bg-white">
+                        <img src={item.logoUrl} alt="" className="h-4 w-4 object-contain" />
+                      </span>
+                    )}
+                    <span>{item.company} | {item.location}</span>
+                  </p>
                   <p className="text-sm text-slate-500">{item.date}</p>
                   <ul className="mt-4 list-disc list-inside text-slate-400 space-y-1">
                     {item.description.map((desc, i) => <li key={i}>{desc}</li>)}
