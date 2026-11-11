@@ -6,7 +6,7 @@ import { GithubIcon, LinkedinIcon, MailIcon, PhoneIcon } from './Icons';
 const Contact: React.FC = () => {
     const contactInfo = {
         phone: '919-768-2648',
-        email: 'owen.chen@duke.edu',
+        email: 'owenchen168@outlook.com',
         linkedin: 'https://www.linkedin.com/in/owen-chen2006',
         github: 'https://github.com/OwenChen2006'
     };

@@ -11,10 +11,10 @@ const Hero: React.FC = () => {
               Owen Chen
             </h1>
             <p className="text-xl md:text-2xl text-cyan-400 font-semibold mb-8 neon-text">
-              ML Engineer | Researcher | Full-Stack Developer
+              Applied AI/ML Engineer
             </p>
             <p className="text-lg text-gray-400 max-w-xl">
-              I build scalable, high-impact solutions at the intersection of machine learning, software engineering, and scientific discovery.
+              I ship production systems where models, data, and infrastructure stay correct under real load.
             </p>
              <a href="#projects" className="mt-8 inline-block bg-cyan-500/80 text-white font-bold py-3 px-8 rounded-md hover:bg-cyan-600/90 transition-all transform hover:scale-105 shadow-lg shadow-cyan-500/50">
               View My Work

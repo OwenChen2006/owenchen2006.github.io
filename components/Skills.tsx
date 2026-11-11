@@ -6,23 +6,15 @@ import AnimatedSection from './AnimatedSection';
 const skillsData: SkillCategory[] = [
   {
     name: 'Languages',
-    skills: ['Java', 'Python', 'C/C++', 'Assembly', 'HTML', 'CSS', 'Bash', 'Javascript'],
+    skills: ['Python', 'Java', 'C/C++', 'TypeScript', 'JavaScript', 'SQL', 'Bash', 'Verilog', 'MATLAB', 'Assembly'],
   },
   {
-    name: 'Developer Tools & Frameworks',
-    skills: ['PyTorch', 'TensorFlow', 'React', 'Flask', 'FastAPI', 'LangChain', 'Qiskit', 'Arduino', 'Git', 'Google Cloud', 'Colab'],
+    name: 'Systems & Tools',
+    skills: ['Kubernetes', 'Docker', 'Azure', 'FastAPI', 'Flask', 'React', 'LangGraph', 'Kafka', 'Redis', 'PostgreSQL', 'CI/CD', 'Git'],
   },
   {
-    name: 'Libraries & Data Science',
-    skills: ['NumPy', 'Pandas', 'SciPy', 'Matplotlib', 'scikit-learn', 'Keras', 'OpenCV', 'FAISS'],
-  },
-  {
-    name: 'Databases & Systems',
-    skills: ['PostgreSQL', 'SQLite', 'CUDA', 'Linux', 'Docker', 'Azure ML'],
-  },
-  {
-    name: 'Hardware & EDA',
-    skills: ['Logisim Evolution', 'AutoCAD'],
+    name: 'Data & ML',
+    skills: ['PyTorch', 'TensorFlow', 'scikit-learn', 'XGBoost', 'RAG', 'NumPy', 'Pandas', 'OpenCV', 'Spark', 'FAISS', 'Qiskit'],
   },
 ];
 

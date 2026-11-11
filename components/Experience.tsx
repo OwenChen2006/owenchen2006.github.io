@@ -6,11 +6,15 @@ import { BriefcaseIcon, HelpCircleIcon } from './Icons';
 
 const experienceData: ExperienceItem[] = [
   {
-    role: 'Software Engineering Intern',
-    company: 'Microsoft AI',
-    date: 'June 2026 - September 2026',
+    role: 'Applied AI/ML Software Engineering Intern',
+    company: 'Microsoft AI (MAI)',
+    date: 'June 2026 - August 2026',
     location: 'Redmond, WA',
-    description: ['CoreAI in business and commerce'],
+    description: [
+      'Shipped a production AKS ingestion service for Microsoft Cashback — six affiliate APIs plus CRM, watermarked dedup on Azure Service Bus and SQL — covering 25,000+ merchants and replacing a 12-vendor manual workflow.',
+      'Built a budget-capped Azure OpenAI triage layer with deterministic fallbacks that extracts deal terms from unstructured catalogs: 90% less manual entry, and a human-reviewed PR for every update.',
+      'Replaced full-catalog rebuilds with incremental sync and single-blob serialization, cutting memory 50% and latency from 8 minutes to seconds.',
+    ],
     iconName: 'briefcase',
   },
   {
@@ -19,34 +23,21 @@ const experienceData: ExperienceItem[] = [
     date: 'November 2025 - Present',
     location: 'Portland, OR',
     description: [
-      'Leading forecasting ML, LLM inference, and backend engineering for Echolon, an AI-powered business intelligence platform built for small and mid-size companies that want clarity, speed, and smarter decision-making.',
-    ],
-    iconName: 'briefcase',
-  },
-
-  {
-    role: 'AI Software Developer Intern',
-    company: 'Calidar Medical',
-    date: 'June 2025 - September 2025',
-    location: 'Durham, NC',
-    description: [
-      'Developed CNN-based diagnostic algorithms that helped triple breast cancer detection rates through XRD imaging—because every earlier diagnosis matters.',
-      'Engineered a spatially aware classifier trained on 3M+ datapoints, reaching 0.99 ROC AUC and surpassing medical benchmarks.',
-      'Trained a 2-stage YOLO‑v8 CV model to classify coded aperture vertices with 1.00 recall; narrowed 3000+ to 38 potential investors using a transformer‑based NLP engine.',
+      'Own forecasting ML, LLM inference, and backend for an AI business-intelligence platform built so small and mid-size companies can decide faster.',
     ],
     iconName: 'briefcase',
   },
   {
     role: 'Technical Consultant',
-    company: 'Fortune 100 motor company',
-    date: 'September 2025 - Present',
+    company: 'Tesla',
+    date: 'August 2025 - January 2026',
     location: 'Remote',
     description: [
-      'Engineered intelligent routing system for multi-agent AI platform processing 25+ natural language query types across distributed microservices, achieving 100% validation accuracy on 40,000+ supply chain records with sub-10s latency using Gemini API, semantic intent classification, and FastAPI-based orchestration layer.',
-
-      'Implemented production-grade optimization pipeline combining greedy algorithms (100ms) and constraint programming solvers (2s) for real-time resource allocation, with comprehensive testing framework tracking 5 core metrics and automated tool-calling workflows managing 10+ specialized operations at 90%+ accuracy.',
+      'Prototyped a LangGraph supply-chain multi-agent system over 40,000+ operational records with 94%+ intent accuracy.',
+      'Routed queries through entity extraction and deterministic handlers (FAISS and control flow) instead of text-to-SQL, with end-to-end decisions under 500ms.',
+      'Built LLM-as-a-judge evals for hallucination, intent, and usefulness, cutting critical-failure root-cause time by 35%.',
     ],
-      iconName: 'help',
+    iconName: 'briefcase',
   },
   {
     role: 'Undergraduate Researcher',
@@ -54,8 +45,19 @@ const experienceData: ExperienceItem[] = [
     date: 'January 2025 - Present',
     location: 'Durham, NC',
     description: [
-      'Lead ML sub-team building an automated pipeline for spectroscopy: denoising, feature engineering, and model evaluation delivered through a clean REST interface.',
-      'Cut path from experimental data to decisions from hours to minutes—unlocking faster material discovery in atomic-layer deposition.',
+      'Led an ML sub-team on Raman spectroscopy automation — AsLS baseline correction, Savitzky–Golay denoising, and 1D-CNNs — taking analysis from hours to minutes and cutting environment spin-up by 60%.',
+      'Containerized training and deployment with Docker and CI/CD, holding 99.5% test reproducibility across machines.',
+    ],
+    iconName: 'briefcase',
+  },
+  {
+    role: 'AI Software Developer Intern',
+    company: 'Calidar Medical',
+    date: 'June 2025 - September 2025',
+    location: 'Durham, NC',
+    description: [
+      'Designed a multi-input 1D-CNN for breast cancer classification on spectral and spatial channels: 0.99 ROC AUC and >0.90 recall with Focal Loss and PR-curve thresholding.',
+      'Shipped a two-stage vision pipeline — YOLOv8 localization, then EfficientNetV2 classification — for high-throughput clinical datasets.',
     ],
     iconName: 'briefcase',
   },

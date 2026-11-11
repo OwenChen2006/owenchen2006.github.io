@@ -28,10 +28,10 @@ const projectData: ProjectItem[] = [
   },
   {
     title: 'Blue Devil Eats',
-    tech: ['Python', 'Javascript', 'React', 'Flask', 'REST API', 'NLP'],
+    tech: ['Python', 'Flask', 'React', 'SQLite', 'Docker', 'RAG'],
     date: 'January 2025 - Present',
     description: [
-      'Create an AI-driven full-stack web application leveraging REST API and NLP models and a Python/Flask backend to generate personalized meal plans from Duke restaurants with real-time interactive nutrition insights.',
+      'Founded an AI meal planner for 17K+ Duke students across 45+ restaurants — Flask, React, SQLite, Docker, and RAG.',
     ],
     githubLink: 'https://github.com/OwenChen2006',
     siteLink: 'https://dukebdeats.colab.duke.edu',
@@ -51,10 +51,10 @@ const projectData: ProjectItem[] = [
   {
     title: 'Market Signal Generator on a Pipelined Processor',
     tech: ['Verilog', 'FPGA', 'Vivado', 'MIPS Assembly', 'Computer Architecture'],
-    date: 'Spring 2026',
+    date: 'March 2026 - April 2026',
     description: [
-      'Built a system-on-chip around a five-stage pipelined MIPS-style CPU on the Nexys A7 and ran a multi-indicator trading strategy end-to-end with memory-mapped I/O and a live 640×480 VGA dashboard (strategy vs buy-and-hold, price bars, trade markers).',
-      'Fixed mult/div stall and load-use bypass issues under real branch-heavy assembly workload; extended MMIO with chart ring buffers and optional branch-predictor profiling counters.',
+      'Built an FPGA SoC around a 32-bit, 5-stage pipelined RISC CPU in Verilog and ran a 5-indicator strategy over 1,000-day backtests, with a live VGA dashboard of strategy vs buy-and-hold.',
+      'Root-caused a Booth-multiplier stall that had corrupted 50% of RSI computations.',
     ],
     githubLink: 'https://gitlab.oit.duke.edu/yc641/market-signal-generator-on-a-pipelined-processor',
     sourceCodeLabel: 'GitLab',

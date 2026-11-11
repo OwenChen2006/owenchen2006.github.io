@@ -12,11 +12,11 @@ const Education: React.FC = () => {
               <h3 className="text-2xl font-bold text-sky-400">Duke University</h3>
               <p className="text-slate-300 italic">Bachelor of Science in Engineering</p>
             </div>
-            <div className="text-slate-400 mt-2 md:mt-0">Durham, NC — Expected May 2027</div>
+            <div className="text-slate-400 mt-2 md:mt-0">Durham, NC — Expected May 2028</div>
           </div>
           <div className="mt-4 text-slate-300">
-            <p>Double Major in Electrical and Computer Engineering and Computer Science — <span className="font-semibold">GPA: 3.7/4.0</span></p>
-            <p className="mt-3"><span className="font-semibold">Relevant coursework:</span> Data Structures and Algorithms, Computer Architecture, Linear Algebra, Fundamentals of ECE, Signals and Systems, Multivariable Calculus, Probability, Intro to Applied ML, Digital Systems, Differential Equations, Intro to Microlelectric Devices and Circuits</p>
+            <p>Electrical & Computer Engineering and Computer Science — <span className="font-semibold">GPA: 3.7/4.0</span></p>
+            <p className="mt-3"><span className="font-semibold">Relevant coursework:</span> Data Structures & Algorithms, Computer Architecture, Signals & Systems, Linear Algebra, Probability, Electromagnetic Physics, Differential Equations, Microelectronic Devices, Intro to Applied ML, Digital Systems</p>
           </div>
         </div>
       </div>

@@ -20,7 +20,7 @@ const About: React.FC = () => {
                     I’m Owen Chen — an ECE/CS builder who got hooked on tech after spending way too many nights modding video games and realizing I could change how the world worked, even if it was just on screen. That curiosity turned into a love for building systems that actually do things — the kind that make hard problems feel easy for everyone else.
                 </p>
                 <p>
-                    Since then, I’ve built everything from a 16-bit MIPS CPU and reproducible ML pipelines in Duke’s Wang Lab to full-stack, agentic tools like BlueDevilEats and an NBA RAG chatbot. I like being in the middle of it all — wiring together the data, the models, and the interfaces until something that once looked messy suddenly feels smooth and alive.
+                    Most recently I shipped production ingestion at Microsoft AI: a fault-tolerant cashback pipeline, LLM triage with hard fallbacks, and pull requests a human still approves. Before that, a 16-bit MIPS CPU, spectroscopy models in Duke’s Wang Lab, and full-stack tools like Blue Devil Eats. I like the middle of the stack — data, models, and the interface — until something messy feels obvious.
                 </p>
                 <p>
                     For me, reliable software is a quiet kind of art — it earns trust without asking for attention. I build that kind of work; things that help teams move faster, make products feel dependable, and turn intelligence into something people can use every day.
